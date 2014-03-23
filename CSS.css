@@ -1,11 +1,11 @@
-
-
-body {margin:0px;}
+html, body {margin:0px; height:100%;}
 h1 {text-align:center;}
 h2 {}
 h3 {}
 p {}
-
+a:visited {color:#000000; }
+a:link {color:#000000; }
+a:active {color:#FFFFFF; }
 
 div {display: inline-block;}
 
@@ -15,9 +15,11 @@ div {display: inline-block;}
 
 .submain {width:80%; height:100%;}
 
-.subleft {background-color:#FF0000; width:15%; float:left; height:100%;}
+.subleft {background-color:#FF0000; width:15%; float:left; height:100%; font-weight:bold;}
 
-.subright {background-color:#FF0000; width:4%; float:right; height:100%;}
+.subright {background-color:#FF0000; width:1%; float:right; height:100%;}
+
+.subfarright {background-color:#000000; width:1%; float:right; height:100%;}
 
 
 
