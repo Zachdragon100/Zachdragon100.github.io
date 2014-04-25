@@ -2,45 +2,61 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/CSS.css" />
-    <script>
-    	function canvasThing(){
-	// Find the canvas element.
-	var canvas = document.getElementById('canvasOne');
+    <script type="text/javascript">
 	
-	// Determine size and find center of canvas.
-	var w = canvas.getAttribute("width");
-	var h = canvas.getAttribute("height");
-	var x = w / 2;
-	var y = h / 2;
-	var gap = 0.95;
-	
-	// Determine how large the circle can be.
-	var r = (x > y ? y : x) - 10;
-	
-	if (canvas.getContext){
+	function canvasThing(){
+		
+		var canvas = document.getElementById('canvasOne');
 		var ctx = canvas.getContext('2d');
+		
+		var width = canvas.getAttribute("width");
+		var height = canvas.getAttribute("height");
+		var centerX = width/2;
+		var centerY = height/2;
+		var gapScale = 0.95; //Mind the gap
+		var wedgesCount = -28.7;
+		var allAround = 2 * Math.PI;
+		var rad = (centerX > centerY ? centerY : centerX) - 10;
+		
+		ctx.beginPath();
+		ctx.arc(centerX, centerY, rad, 0, allAround, true);
+		ctx.stroke();
+		
+		drawWedges(ctx, centerX, centerY, rad * gapScale, wedgesCount);
+		
+	}
+	
+	function drawWedges(ctx, x, y, r, n){
+		var n = Math.abs(n);
+		var n = Math.ceil(n);
+		var angle = 2 * Math.PI / n;
 		
 		ctx.beginPath();
 		
-		// Outer circle.
-		ctx.arc(x, y, r, 0, Math.PI*2, true);
-		ctx.moveto(x + r * gap, y);
-		ctx.arc(x, y, r * gap, 0, Math.PI * 2, true);
+		ctx.moveTo(x + r, y);
+		ctx.arc(x, y, r, 0, 2 * Math.PI, true);
+		
+		for(i=0; i<n; i++){
+			var conPointX = x + r * Math.cos(i * angle);
+			var conPointY = y + r * Math.sin(i * angle);
+			
+			ctx.moveTo(x, y);
+			ctx.lineTo(conPointX, conPointY);
+			
+		}
+		
 		ctx.stroke();
-            }
-        }
-	
-};
-
-
+		
+	}
     </script>
 	<title>--Zachary Eggert--</title>
 	<meta charset="utf-8" />
 	
 </head>
-<body onLoad="canvasThing()">
-	
-    <canvas class="canvasOne" width="500" height="500"></canvas>
+<body onLoad="canvasThing();">
+	<h1>Zachary's Webpage for Tests</h1>
+    <hr>
+    <canvas id="canvasOne" width="800" height="600"></canvas>
     
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <script type="text/javascript">
+        function draw(){
+            // Find the canvas element.
+            var canvas = document.getElementById('tutorial');
+
+            // Determine size and find center of canvas.
+            var w = canvas.getAttribute("width");
+            var h = canvas.getAttribute("height");
+            var x = w / 2;
+            var y = h / 2;
+
+            // Determine how large the circle can be.
+            var r = (x > y ? y : x) - 10;
+
+            if (canvas.getContext){
+                var ctx = canvas.getContext('2d');
+
+                ctx.beginPath();
+
+                // Outer circle.
+                ctx.arc(x, y, r, 0, Math.PI*2, true);
+
+                ctx.stroke();
+            }
+        }
+    </script>
+    <style type="text/css">
+        body { font-family: "Helvetica Neue", helvetica, sans-serif; }
+        canvas { border: 1px solid black; }
+    </style>
+</head>
+<body onload="draw();"> <!-- Draw function is called in response to onload event. -->
+    <p>Drawing using the &lt;canvas&gt; is a great way to learn some JavaScript.
+        Here are somethings to try:</p>
+        <ol>
+            <li>Draw an inner circle.</li>
+            <li>Draw a line that divides the inner circle in half.</li>
+            <li>Divide the inner circle into wedges.</li>
+            <li>Fill a wedge with color.</li>
+            <li>Write a function to divide the inner circle into an arbitrary
+                number of wedges.</li>
+            <li>Write a function to fill in an arbitrary wedge with color.</li>
+        </ol>
+    <p>You may find this tutorial useful: <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Canvas_tutorial">Mozilla Canvas Tutorial.</a>
+    </p>
+    <canvas id="tutorial" width="600" height="400"></canvas>
+</body>
+</html>
