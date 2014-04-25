@@ -14,7 +14,7 @@
 		var centerX = width/2;
 		var centerY = height/2;
 		var gapScale = 0.95; //Mind the gap
-		var wedgesCount = -28.7;
+		var wedgesCount = prompt("Number of Parts");
 		var allAround = 2 * Math.PI;
 		var rad = (centerX > centerY ? centerY : centerX) - 10;
 		
@@ -30,21 +30,24 @@
 		var n = Math.abs(n);
 		var n = Math.ceil(n);
 		var angle = 2 * Math.PI / n;
+		var allAround = 2 * Math.PI;
+		var xOffset = 0;
+		var yOffset = 0;
 		
 		ctx.beginPath();
 		
 		ctx.moveTo(x + r, y);
-		ctx.arc(x, y, r, 0, 2 * Math.PI, true);
-		
+		ctx.arc(x, y, r, 0, allAround, true);
+		if(n!=1){
 		for(i=0; i<n; i++){
 			var conPointX = x + r * Math.cos(i * angle);
 			var conPointY = y + r * Math.sin(i * angle);
 			
-			ctx.moveTo(x, y);
+			ctx.moveTo(x + xOffset, y + yOffset);
 			ctx.lineTo(conPointX, conPointY);
 			
 		}
-		
+		}
 		ctx.stroke();
 		
 	}
@@ -54,9 +57,10 @@
 	
 </head>
 <body onLoad="canvasThing();">
-	<h1>Zachary's Webpage for Tests</h1>
+	<h1 align="center">Zachary's Webpage for Tests</h1>
     <hr>
-    <canvas id="canvasOne" width="800" height="600"></canvas>
-    
+    <div style="width:100%;text-align:center;">
+    <canvas id="canvasOne" width="900" height="600" style="display:inline;">No Canvas For You</canvas>
+    </div>
 </body>
 </html>
