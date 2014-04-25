@@ -29,24 +29,24 @@
 	function drawWedges(ctx, x, y, r, n){
 		var n = Math.abs(n);
 		var n = Math.ceil(n);
+		var n = n%257;
 		var angle = 2 * Math.PI / n;
 		var allAround = 2 * Math.PI;
 		var xOffset = 0;
 		var yOffset = 0;
-		
 		ctx.beginPath();
 		
 		ctx.moveTo(x + r, y);
 		ctx.arc(x, y, r, 0, allAround, true);
 		if(n!=1){
-		for(i=0; i<n; i++){
-			var conPointX = x + r * Math.cos(i * angle);
-			var conPointY = y + r * Math.sin(i * angle);
-			
-			ctx.moveTo(x + xOffset, y + yOffset);
-			ctx.lineTo(conPointX, conPointY);
-			
-		}
+			for(i=0; i<n; i++){
+				var conPointX = x + r * Math.cos(i * angle);
+				var conPointY = y + r * Math.sin(i * angle);
+				
+				ctx.moveTo(x + xOffset, y + yOffset);
+				ctx.lineTo(conPointX, conPointY);
+				
+			}
 		}
 		ctx.stroke();
 		
