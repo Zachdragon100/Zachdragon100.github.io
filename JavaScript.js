@@ -1,6 +1,6 @@
 function canvasThing(){
 	// Find the canvas element.
-	var canvas = document.getElementById('tutorial');
+	var canvas = document.getElementById('canvasOne');
 	
 	// Determine size and find center of canvas.
 	var w = canvas.getAttribute("width");
