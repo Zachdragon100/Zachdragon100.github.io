@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/CSS.css" />
     <script type="text/javascript">
 	
-	function canvasThing(){
+	function draw(){
 		
 		var canvas = document.getElementById('canvasOne');
 		var ctx = canvas.getContext('2d');
@@ -34,10 +34,11 @@
 		var allAround = 2 * Math.PI;
 		var xOffset = 0;
 		var yOffset = 0;
-		ctx.beginPath();
 		
+		ctx.beginPath();
 		ctx.moveTo(x + r, y);
 		ctx.arc(x, y, r, 0, allAround, true);
+		
 		if(n!=1){
 			for(i=0; i<n; i++){
 				var conPointX = x + r * Math.cos(i * angle);
@@ -56,7 +57,7 @@
 	<meta charset="utf-8" />
 	
 </head>
-<body onLoad="canvasThing();">
+<body onLoad="draw();">
 	<h1 align="center">Zachary's Webpage for Tests</h1>
     <hr>
     <div style="width:100%;text-align:center;">
