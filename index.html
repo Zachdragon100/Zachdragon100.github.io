@@ -36,8 +36,6 @@
 		var yOffset = 0;
 		
 		ctx.beginPath();
-		ctx.moveTo(x + r, y);
-		ctx.arc(x, y, r, 0, allAround, true);
 		
 		if(n!=1){
 			for(i=0; i<n; i++){
@@ -46,8 +44,16 @@
 				
 				ctx.moveTo(x + xOffset, y + yOffset);
 				ctx.lineTo(conPointX, conPointY);
-				
+				ctx.arc(x, y, r, i * angle, (i+1) * angle, true);
+				ctx.lineTo(x + xOffset, y + yOffset);
+				ctx.closePath();
+				ctx.stroke();
+				ctx.beginPath();
 			}
+			
+		}else{
+			ctx.moveTo(x+r, y)
+			ctx.arc(x, y, r, 0, allAround, true);
 		}
 		ctx.stroke();
 		
