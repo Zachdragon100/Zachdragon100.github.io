@@ -41,7 +41,7 @@ catch(err)
 		var yOffset = 0;
 		var colourSet = ["#A55D00", "#15C0FF", "#FF961B", "#FFF14F", "#FF67B2", "#27D83C", "#FFFFFF", "#000000"];
 		var colourSet2 = ["#722A00", "#008DCC", "#CC6300", "#CCBE1C", "#CC347F", "#00A509", "#FFFFFF", "#000000"];
-		var getsColours = [true, false, true, true, true, true, true, true]
+		var getsColours = [false, false, false, false, false, true, true, true]
 		
 		
 		
