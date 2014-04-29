@@ -20,7 +20,7 @@ function draw(){
 		ctx.fill();
 		ctx.stroke();
 		
-		drawWedges(ctx, centerX, centerY, rad * gapScale, wedgesCount);
+		drawWedges(ctx, centerX, centerY, rad * gapScale, wedgesCount, playerNumber);
 		}
 catch(err)
   {
@@ -31,7 +31,7 @@ catch(err)
   }
 	}
 	
-	function drawWedges(ctx, x, y, r, n){
+	function drawWedges(ctx, x, y, r, n, player){
 		var n = Math.abs(n);
 		var n = Math.ceil(n);
 		var n = n%257;
@@ -40,7 +40,8 @@ catch(err)
 		var xOffset = 0;
 		var yOffset = 0;
 		var colourSet = ["#A55D00", "#15C0FF", "#FF961B", "#FFF14F", "#FF67B2", "#27D83C", "#FFFFFF", "#000000"];
-		var getsColours = [true, true, true, true, true, true, true, true]
+		var colourSet2 = ["#722A00", "#008DCC", "#CC6300", "#CCBE1C", "#CC347F", "#00A509", "#FFFFFF", "#000000"];
+		var getsColours = [false, false, false, false, false, false, true, true]
 		
 		
 		
@@ -58,8 +59,10 @@ catch(err)
 				ctx.closePath();
 				if(getsColours[i]){
 					ctx.fillStyle = colourSet[i];
-					ctx.fill();
+				}else{
+					ctx.fillStyle = colourSet2[player - 1];
 				}
+				ctx.fill();
 				ctx.stroke();
 			}
 			
