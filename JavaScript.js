@@ -51,8 +51,8 @@ catch(err)
 				var conPointX = x + r * Math.cos(i * angle);
 				var conPointY = y + r * Math.sin(i * angle);
 				
-				var innerXoff = r / 10 *Math.cos((i + .5) * angle);
-				var innerYoff = r / 10 *Math.cos((i + .5) * angle);
+				var innerXoff = r *Math.cos((i + .5) * angle) / 10;
+				var innerYoff = r *Math.cos((i + .5) * angle) / 10;
 				
 				
 				
