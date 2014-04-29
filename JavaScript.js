@@ -12,7 +12,7 @@ function draw(){
 		var allAround = 2 * Math.PI;
 		var rad = (centerX < centerY ? centerX : centerY) - 10;
 		var colourSet = ["#A55D00", "#15C0FF", "#FF961B", "#FFF14F", "#FF67B2", "#27D83C", "#FFFFFF", "#000000"];
-		var playerNumber = 5;
+		var playerNumber = 6;
 		try{
 		ctx.beginPath();
 		ctx.fillStyle = colourSet[playerNumber - 1];
