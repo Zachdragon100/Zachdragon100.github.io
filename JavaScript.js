@@ -51,11 +51,16 @@ catch(err)
 				var conPointX = x + r * Math.cos(i * angle);
 				var conPointY = y + r * Math.sin(i * angle);
 				
+				var innerXoff = r / 25 *Math.cos((i + .5) * angle);
+				var innerYoff = r / 25 *Math.cos((i + .5) * angle);
+				
+				
+				
 				ctx.beginPath();
-				ctx.moveTo(x + xOffset, y + yOffset);
+				ctx.moveTo(x + xOffset + innerXoff, y + yOffset + innerYoff);
 				ctx.lineTo(conPointX, conPointY);
 				ctx.arc(x, y, r, i * angle, (i+1) * angle, false);
-				ctx.lineTo(x + xOffset, y + yOffset);
+				ctx.lineTo(x + xOffset + innerXoff, y + yOffset + innerYoff);
 				ctx.closePath();
 				if(getsColours[i]){
 					ctx.fillStyle = colourSet[i];
