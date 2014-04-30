@@ -8,7 +8,7 @@ function draw(){
 		var centerX = width/2;
 		var centerY = height/2;
 		var gapScale = 0.925; //Mind the gap
-		var wedgesCount = prompt("Number of Parts");
+		var wedgesCount = 6; //prompt("Number of Parts");
 		var allAround = 2 * Math.PI;
 		var rad = (centerX < centerY ? centerX : centerY) - 10;
 		var colourSet = ["#8C4400", "#00A7E6", "#E67D02", "#E6D836", "#E64E99", "#0EBF23", "#FFFFFF", "#000000"];
