@@ -7,12 +7,12 @@ function draw(){
 		var height = canvas.getAttribute("height");
 		var centerX = width/2;
 		var centerY = height/2;
-		var gapScale = 0.95; //Mind the gap
+		var gapScale = 0.925; //Mind the gap
 		var wedgesCount = prompt("Number of Parts");
 		var allAround = 2 * Math.PI;
 		var rad = (centerX < centerY ? centerX : centerY) - 10;
-		var colourSet = ["#A55D00", "#15C0FF", "#FF961B", "#FFF14F", "#FF67B2", "#27D83C", "#FFFFFF", "#000000"];
-		var playerNumber = 6;
+		var colourSet = ["#8C4400", "#00A7E6", "#E67D02", "#E6D836", "#E64E99", "#0EBF23", "#FFFFFF", "#000000"];
+		var playerNumber = 1;
 		try{
 		ctx.beginPath();
 		ctx.fillStyle = colourSet[playerNumber - 1];
@@ -41,7 +41,7 @@ catch(err)
 		var yOffset = 0;
 		var colourSet = ["#A55D00", "#15C0FF", "#FF961B", "#FFF14F", "#FF67B2", "#27D83C", "#FFFFFF", "#000000"];
 		var colourSet2 = ["#722A00", "#008DCC", "#CC6300", "#CCBE1C", "#CC347F", "#00A509", "#FFFFFF", "#000000"];
-		var getsColours = [false, false, false, false, false, true];
+		var getsColours = [true, false, true, false, true, true];
 		
 		
 		
