@@ -1,8 +1,8 @@
 function draw(){
-		
+
 		var canvas = document.getElementById('canvasOne');
 		var ctx = canvas.getContext('2d');
-		
+
 		var width = canvas.getAttribute("width");
 		var height = canvas.getAttribute("height");
 		var centerX = width/2;
@@ -19,7 +19,7 @@ function draw(){
 		ctx.arc(centerX, centerY, rad, 0, allAround, false);
 		ctx.fill();
 		ctx.stroke();
-		
+
 		drawWedges(ctx, centerX, centerY, rad * gapScale, wedgesCount, playerNumber);
 		}
 catch(err)
@@ -30,7 +30,7 @@ catch(err)
   alert(txt);
   }
 	}
-	
+
 function drawWedges(ctx, x, y, r, n, player){
 	var n = Math.abs(n);
 	var n = Math.ceil(n);
@@ -42,20 +42,20 @@ function drawWedges(ctx, x, y, r, n, player){
 	var colourSet = ["#A55D00", "#15C0FF", "#FF961B", "#FFF14F", "#FF67B2", "#27D83C", "#FFFFFF", "#000000"];
 	var colourSet2 = ["#722A00", "#008DCC", "#CC6300", "#CCBE1C", "#CC347F", "#00A509", "#CCCCCC", "#000000"];
 	var getsColours = [true, false, true, false, true, true];
-	
-	
-	
-	
+
+
+
+
 	if(n!=1){
 		for(i=0; i<n; i++){
 			var conPointX = x + r * Math.cos(i * angle);
 			var conPointY = y + r * Math.sin(i * angle);
-			
+
 			var innerXoff = r *Math.cos((i + .5) * angle) / 10;
 			var innerYoff = r *Math.sin((i + .5) * angle) / 10;
-			
-			
-			
+
+
+
 			ctx.beginPath();
 			ctx.moveTo(x + xOffset + innerXoff, y + yOffset + innerYoff);
 			ctx.lineTo(conPointX, conPointY);
@@ -70,7 +70,7 @@ function drawWedges(ctx, x, y, r, n, player){
 			ctx.fill();
 			ctx.stroke();
 		}
-		
+
 	}else{
 		ctx.beginPath();
 		ctx.moveTo(x+r, y)
@@ -79,5 +79,5 @@ function drawWedges(ctx, x, y, r, n, player){
 		ctx.fill();
 		ctx.stroke();
 	}
-	
+
 }
