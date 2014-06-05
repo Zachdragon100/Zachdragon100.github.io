@@ -6,10 +6,9 @@ Congratulations, Zachdragon100.github.io
 May you serve me well
 
 ===========================================================================
-```
+```JavaScript
 
-//JavaScript
-
-var codeType = JavaScript;
+var codeType = "JavaScript";
+console.log(codeType);
 
 ```
