@@ -8,6 +8,7 @@ May you serve me well
 ===========================================================================
 ```JavaScript
 
+
 var codeType = "JavaScript";
 console.log(codeType);
 
